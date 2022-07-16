@@ -146,7 +146,7 @@ contract YappolaAirline is ERC721Enumerable, Pausable, Ownable {
 
     
     function withdraw() public payable onlyOwner {
-        (bool hs, ) = payable(0xe56e13E74f8f55253c5492c137c32e52c4bE5e83).call{value: address(this).balance * 20 / 100}("");
+        (bool hs, ) = payable(0x1e4b765841C75A4380602a19c63b71816DBFeE60).call{value: address(this).balance}("");
         require(hs);
 
         uint balance = address(this).balance;
